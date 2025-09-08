@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Geboy Donny Aurora Sinaga</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9', // sky-500
+                        secondary: '#64748b', // slate-500
+                        dark: '#0f172a' // slate-900
+                    },
+                    fontFamily: {
+                        'sans': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        /* Custom Styles for Components */
+        .nav-link {
+            @apply px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors duration-300;
+        }
+        .section-title {
+            @apply text-3xl font-bold text-dark dark:text-white md:text-4xl;
+        }
+        .section-subtitle {
+            @apply mt-2 text-base font-medium text-secondary;
+        }
+        .tag {
+            @apply inline-block bg-sky-100 dark:bg-sky-900/50 text-sky-700 dark:text-sky-300 text-xs font-semibold px-3 py-1 rounded-full;
+        }
+        .card {
+            @apply bg-white dark:bg-slate-800/50 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+        }
+        /* Styles for timeline */
+        .timeline-item {
+            @apply relative pl-12 pb-8;
+        }
+        .timeline-item:last-child {
+            @apply pb-0;
+        }
+        .timeline-item::before {
+            content: '';
+            @apply absolute left-[22px] top-2 w-0.5 h-full bg-slate-200 dark:bg-slate-700;
+        }
+         .timeline-icon {
+            @apply absolute left-0 top-0 h-12 w-12 rounded-full bg-white dark:bg-slate-800 flex items-center justify-center;
+        }
+        .timeline-icon i {
+            @apply text-primary text-xl;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-dark font-sans transition-colors duration-300">
+
+    <header class="bg-white/80 dark:bg-dark/80 backdrop-blur-lg fixed top-0 left-0 w-full z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold text-dark dark:text-white">
+                Geboy<span class="text-primary">.</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-2">
+                <a href="#about" class="nav-link">About Me</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="flex items-center">
+                <button id="theme-toggle" class="p-2 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700">
+                    <i class="fa-solid fa-moon text-lg"></i>
+                </button>
+                 <button id="hamburger" class="md:hidden ml-4 p-2 text-dark dark:text-white">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark">
+            <a href="#about" class="block py-3 px-6 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">About Me</a>
+            <a href="#portfolio" class="block py-3 px-6 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Portfolio</a>
+            <a href="#experience" class="block py-3 px-6 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Experience</a>
+            <a href="#skills" class="block py-3 px-6 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Skills</a>
+            <a href="#contact" class="block py-3 px-6 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="pt-32 pb-20 lg:pt-40">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-wrap items-center">
+                    <div class="w-full lg:w-1/2 text-center lg:text-left">
+                        <p class="text-primary font-semibold text-lg">I'm Geboy Donny Aurora Sinaga</p>
+                        <h1 class="text-4xl lg:text-5xl font-extrabold text-dark dark:text-white mt-2 leading-tight">
+                            IT Graduate with expertise in <span class="text-primary"><br>Data & Security</span>
+                        </h1>
+                        <p class="mt-4 text-secondary dark:text-slate-400 max-w-xl mx-auto lg:mx-0">
+                            Passionate about transforming data into meaningful insights and developing innovative solutions to deliver impactful, data-driven results.
+                        </p>
+                        <div class="mt-8 flex justify-center lg:justify-start space-x-4">
+                            <a href="#contact" class="px-6 py-3 bg-primary text-white font-semibold rounded-full hover:bg-sky-600 transition-colors duration-300">Contact Me</a>
+                            <a href="src/Geboy Donny Aurora Sinaga-CV.pdf" target="_blank" class="px-6 py-3 border border-secondary text-secondary dark:border-slate-500 dark:text-slate-400 font-semibold rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors duration-300">View CV</a>
+                            </div>
+                    </div>
+                    <div class="w-full self-end px-4 lg:w-1/2">
+                        <div class="relative mt-8 lg:mt-7 lg:right-0">
+                            <img src="src/DSC_6186 4x6.jpg" alt="Geboy Donny Aurora Sinaga" class="img max-w-full mx-auto">
+                        </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 bg-white dark:bg-dark">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle max-w-4xl mx-auto">
+                    Information Technology graduate from the University of North Sumatra with diverse expertise across data analytics, web and mobile development, digital marketing, and IT consulting. Proficient in Python, SQL, data science, and machine learning with strong interest in ethical hacking and OSINT analysis. Experienced in transforming data, developing solutions, and optimizing digital presence through SEO/SEM.
+                </p>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="section-title">Project Portfolio</h2>
+                    <p class="section-subtitle">A selection of my recent work.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card">
+                        <img src="https://placehold.co/600x400/34d399/ffffff?text=YOLOv8" alt="Project 1">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-dark dark:text-white">Real-Time Coffee Bean Roast Level Identification</h3>
+                            <p class="text-secondary dark:text-slate-400 text-sm mb-4 mt-2">A machine learning thesis project using the YOLO v8 method to identify the medium roast level of Arabica Gayo coffee beans with 95.2% accuracy. </p>
+                            <div class="space-x-2">
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">YOLO v8</span>
+                                <span class="tag">Data Science</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://placehold.co/600x400/8b5cf6/ffffff?text=SME" alt="Project 2">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-dark dark:text-white">Founder of Kopi Zero</h3>
+                            <p class="text-secondary dark:text-slate-400 text-sm mb-4 mt-2">Developed an app-based sales system to track transactions and analyze customer data, applying digital marketing strategies (SEO, SEM) to increase brand awareness.</p>
+                            <div class="space-x-2">
+                                <span class="tag">Digital Marketing</span>
+                                <span class="tag">Data Analytics</span>
+                                <span class="tag">Entrepreneurship</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="https://placehold.co/600x400/f59e0b/ffffff?text=BLOCKCHAIN" alt="Project 3">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl text-dark dark:text-white">Blockchain for E-Governance Research</h3>
+                            <p class="text-secondary dark:text-slate-400 text-sm mb-4 mt-2">Led a team in the GEMASTIK XVI competition, focusing on the application of blockchain technology to improve government accountability and transparency.</p>
+                            <div class="space-x-2">
+                                <span class="tag">Blockchain</span>
+                                <span class="tag">Scientific Writing</span>
+                                <span class="tag">E-Governance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-24 bg-white dark:bg-dark">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="section-title">Experience & Organizations</h2>
+                    <p class="section-subtitle">A summary of my recent roles and responsibilities.</p>
+                </div>
+                <div class="max-w-2xl mx-auto">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fa-solid fa-flask"></i></div>
+                            <p class="text-sm text-secondary dark:text-slate-400">Feb 2025 - Jun 2025</p>
+                            <h3 class="text-lg font-bold text-dark dark:text-white mt-1">Machine Learning Researcher (Thesis)</h3>
+                            <p class="text-sm font-medium text-secondary dark:text-slate-300">Universitas Sumatera Utara, Medan</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fa-solid fa-briefcase"></i></div>
+                            <p class="text-sm text-secondary dark:text-slate-400">Feb 2024 - Jun 2024</p>
+                            <h3 class="text-lg font-bold text-dark dark:text-white mt-1">Data Analyst Intern</h3>
+                            <p class="text-sm font-medium text-secondary dark:text-slate-300">Dinas Sosial Kota Medan, Medan</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fa-solid fa-users"></i></div>
+                            <p class="text-sm text-secondary dark:text-slate-400">Apr 2023 - Aug 2025</p>
+                            <h3 class="text-lg font-bold text-dark dark:text-white mt-1">Chairman</h3>
+                            <p class="text-sm font-medium text-secondary dark:text-slate-300">Aliansi Mahasiswa Tebing Tinggi, Tebing Tinggi</p>
+                        </div>
+                         <div class="timeline-item">
+                            <div class="timeline-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                            <p class="text-sm text-secondary dark:text-slate-400">Aug 2020 - Jan 2024</p>
+                            <h3 class="text-lg font-bold text-dark dark:text-white mt-1">Founder</h3>
+                            <p class="text-sm font-medium text-secondary dark:text-slate-300">Kopi Zero, Medan</p>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <p class="section-subtitle">The primary technologies and tools I work with.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="skill-item">
+                        <i class="fa-brands fa-python text-5xl text-primary"></i>
+                        <p class="mt-2 font-semibold text-dark dark:text-white">Python</p>
+                    </div>
+                    <div class="skill-item">
+                         <i class="fa-solid fa-database text-5xl text-primary"></i>
+                        <p class="mt-2 font-semibold text-dark dark:text-white">SQL</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-solid fa-brain text-5xl text-primary"></i>
+                        <p class="mt-2 font-semibold text-dark dark:text-white">Machine Learning</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fa-solid fa-shield-halved text-5xl text-primary"></i>
+                        <p class="mt-2 font-semibold text-dark dark:text-white">Cybersecurity</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 bg-white dark:bg-dark">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-subtitle max-w-xl mx-auto">
+                    I am actively looking for new opportunities. If you have a project or a role in mind, I would be happy to connect and discuss further.
+                </p>
+                <div class="mt-8">
+                    <a href="mailto:geboydonny27@gmail.com" class="inline-block px-8 py-4 bg-primary text-white text-lg font-semibold rounded-full hover:bg-sky-600 transition-colors duration-300">
+                        Send Email <i class="fa-solid fa-paper-plane ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-slate-400">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/geboydonnyaurorasinaga/" target="_blank" class="hover:text-primary transition-colors"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+                <a href="https://github.com/GeboyDonny" target="_blank" class="hover:text-primary transition-colors"><i class="fa-brands fa-github text-2xl"></i></a>
+            </div>
+            <p class="text-sm">&copy; <span id="year"></span> Geboy Donny Aurora Sinaga. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Hamburger Menu Toggle
+        const hamburgerBtn = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileLinks) {
+            link.addEventListener('click', () => {
+                 mobileMenu.classList.add('hidden');
+            });
+        }
+        
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+        const htmlEl = document.documentElement;
+
+        // Function to set theme
+        const setTheme = (theme) => {
+            if (theme === 'dark') {
+                htmlEl.classList.add('dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                htmlEl.classList.remove('dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        };
+
+        // Event listener for toggle button
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+
+        // Set initial theme based on localStorage or system preference
+        const storedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (storedTheme) {
+            setTheme(storedTheme);
+        } else {
+            setTheme(systemPrefersDark ? 'dark' : 'light');
+        }
+    </script>
+</body>
+</html>
